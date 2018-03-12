@@ -1,0 +1,509 @@
+<html>
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width initial-scale=1 maximun-scale=1 user-scaleble=no">
+	    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	    <link rel="stylesheet" href="css/bootstrap.min.css">
+	    <link rel="stylesheet" href="css/swiper/swiper.min.css">
+	    <title>首页</title>
+	    <link rel="stylesheet" href="css\bootstrap.css">
+	    <script src="js/jquery.js"></script>
+	    <script src="js/bootstrap.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        
+        <script src="js/swiper/swiper.min.js"></script>
+	    <script src="js/main.js"></script>
+
+        <script type="text/javascript" src="js/wow/wow.js"></script>
+	    <link rel="stylesheet" type="text/css" href="css/wow/animate.css">
+
+	    <style type="text/css">
+	       .carousel-control{
+	    	top: 150px;
+	    	bottom: 170px;
+	    	width: 5%;
+	    	font-size: 50px;
+	        }
+
+	       /*先写静态效果*/
+	      /*模块共同*/
+			.video-container{
+				height: 100%;
+				position: relative;/*动画效果父元素设置*/
+				width: 100%;
+			}
+			.mode{
+				height: 70px;
+				width: 493px;
+				text-align: center;
+			}
+			.mode h1{
+				color: #333;
+			}
+			.mode p{
+				text-align: center;
+				font-size: 18px;
+				color:#999;
+				margin-top: 10px;
+			}
+			.mode-01{
+				position: absolute;
+				left: 600px;
+				top: 150px;
+			}
+			.video-container-fluid1{
+				height: 400px;
+				background: #eef1f2;
+				
+			}
+			
+			.video_1{
+				height: 431px;
+				width: 581px;
+				position: absolute;
+				bottom: 0px;
+				
+			}
+			.star_1{
+				position: absolute;
+				height: 431px;
+				width: 581px;
+				left: 0px;
+				bottom: 0px;		
+			}
+            
+            .video-container-fluid2{
+				height: 400px;
+			}
+			.mode-02{
+				position: absolute;
+				left: 200px;
+				top: 150px;
+			}
+			.computer_2{
+				position: absolute;
+				margin-left: 720px;
+				bottom: 0px;
+			}
+            .calendar_3{
+				height: 431px;
+				width: 581px;
+				position: absolute;
+				bottom: 0px;
+				
+			}
+			.rocket_3{
+				position: absolute;
+				height: 431px;
+				width: 581px;
+				left: 0px;
+				bottom: 0px;		
+			}
+			.smoke_3{
+				position: absolute;
+				bottom: 0px;
+			}
+			.icon_4{
+				position: absolute;
+				margin-left: 720px;
+				bottom: 0px;
+			}
+			.hand_4{
+				position: absolute;
+				margin-left: 720px;
+				bottom: 0px;
+			}
+
+			.imgeffect{
+				/*width:32%;
+				float:left;
+				margin-left: 5px;*/
+			}
+			.eimg{
+                -webkit-filter: grayscale(1); 
+                 cursor: pointer;
+                 transition: all .5s ease;
+            }
+            .eimg:hover{
+                 -webkit-filter: grayscale(0);
+            }
+            
+            .cl{
+            	background: #eef1f2;
+            }
+            .curriculem{
+            	width:267px;
+            	float: left;
+            	margin-bottom: 20px;
+            	margin-left: 15px;
+            	border: solid 5px white;
+                overflow: hidden;
+            }
+            .curriculem img{
+                width:270px; 
+                height: 160px;
+                transition: all 0.4s ease-in;
+            }
+            .curriculem:hover img{
+                -webkit-filter: grayscale(1);
+                transform: scale(1.2);
+            }
+
+            .mmk{
+            	text-align: center;
+            }
+            .btn-default{
+            	color: #EE2C2C;
+            	height: 35px;
+                width: 140px;
+                border-color: #EE2C2C;
+            	border-radius: 20px;
+            	margin-top: 30px;
+            }
+            .btn-default:hover{
+            	color: white;
+            	background-color: #EE2C2C;
+            }
+            .btns{
+            	height: 40px;
+                width: 150px;
+                margin-top: 100px;
+            	border-radius: 20px;
+            	color: white;
+            	background-color: #EE2C2C;
+            }
+            .btns:hover{
+            	color: #EE2C2C;
+            	border-color: #EE2C2C;
+            	background-color: white;
+            }
+            
+            .tdc a{
+            	position: relative;
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin-left: 800px;
+                margin-top: -25px;
+                transition:all .3s;
+                background: url(imgs/index2-sprite.png) no-repeat;
+            }
+            .tdc .code0{
+            	 background-position: 0 -25px;
+            }
+            .tdc .code0:hover{
+            	background-position: 0 0px;
+            }
+            .tdc .code0 .code{
+            	position: absolute;
+            	width: 500px;
+                height: 212px;
+                margin-top: 70px;
+                margin-left: -420px;
+            	opacity: 0;
+            	transform:scale(0.01);
+            	background: url(imgs/mk-down-qrcode.png) no-repeat 0 0;
+            	transition:all .3s;
+            }
+            .tdc .code0:hover .code{
+            	opacity: 1;
+            	transform:scale(1);
+            }
+
+            /*底部导航*/
+			#footer{
+			margin-top: 200px;
+			height: 99px;
+			background: #000;
+			color:#787d82;
+		    }
+		#footer .left{
+			float: left;
+			padding:20px 0px;
+			margin-left: 150px;
+		}
+		#footer .left ul li{
+			display: inline-block;
+			margin-right: 20px;
+		}
+		#footer .left ul li a{
+			display: block;
+			width: 48px;
+			height: 23px;
+			font-size: 12px;
+			text-decoration: none;
+			color:#c8cdd2;
+		}
+		#footer .left p{
+			margin-left: 70px;
+		}
+		#footer .left ul li a:hover{
+			color:#fff;
+		}
+		#footer .right{
+			width: 162px;
+			padding:20px 0;
+			
+			float: right;
+			margin-right: 30px;
+		}
+		#footer .right a{
+			opacity: 0.5;
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			margin-left:6px;
+			transition:all .3s;
+		}
+		#footer .right .weixin{
+			position: relative;
+			background: url(imgs/footer-sprite.png) no-repeat 0 -279px;
+		}
+		#footer .right .weibo{
+			background: url(imgs/footer-sprite.png) no-repeat 0 -321px;
+		}
+		#footer .right .qq{
+			background: url(imgs/footer-sprite.png) no-repeat 0 -363px;
+		}
+		#footer .right .weixin:hover{
+			opacity: 1;
+		}
+		#footer .right .weixin:hover .weixin-tip{
+			display: block;
+		}
+		#footer .right .weibo:hover{
+			opacity: 1;
+		}
+		#footer .right .qq:hover{
+			opacity: 1;
+		}
+		#footer .right .weixin .weixin-tip{
+			width: 170px;
+			height: 220px;
+			position: absolute;/*必须加*/
+			left: -69px;
+			bottom: 35px;
+			background: url(imgs/footer-sprite.png) no-repeat 0 0;
+			display: none;
+		}
+	
+	</style>
+    </head>
+	<body>
+		<!-- 导航栏开始 -->
+		<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+			<div class="container-fluied">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="index.html" class="navbar-brand">
+						<img src="imgs/logo.png" width=86 alt=""></a>
+				</div>
+				<div class="collapse navbar-collapse" id="nav-collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="course.html">课程</a>
+						</li>
+                        <li>
+							<a href="project.html">计划</a>
+						</li>
+						<li>
+							<a href="share.html">分享</a>
+						</li>
+						<li>
+							<a href="community.html">社区</a>
+						</li>
+					</ul>
+					<form id="" method="post" action="" class="navbar-form navbar-right">
+						<a href="#" class="btn btn-success">登录</a>
+						<a href="#" class="btn btn-info">注册</a>
+						<input type="search" placeholder="请输入搜索的内容" class="form-control">
+						<button type="button" class="btn btn-warning" id="search">Search</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+        <!-- 导航栏结束 -->
+        
+        <!-- 轮播开始 -->
+        <div class="container" style="height:50px"></div>
+        <div class="carousel slide" id="mycarousel">
+        	<!-- 轮播指标开始 -->
+        	<ol class="carousel-indicators">
+        		<li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#mycarousel" data-slide-to="1"></li>
+                <li data-target="#mycarousel" data-slide-to="2"></li>
+        	</ol>
+        	<!-- 轮播指标结束 -->
+ 
+        	<!-- 轮播内容开始 -->
+        	 <div class="carousel-inner">
+        	 	<div class="item active"><img src="imgs/banner1.jpg" alt=""></div>
+                <div class="item"><img src="imgs/banner2.jpg" alt=""></div>
+                <div class="item"><img src="imgs/banner0.jpg" alt=""></div>
+             </div>
+             <!-- 轮播内容结束 -->
+
+             <!-- 轮播导航开始 -->
+             <a href="#mycarousel" class="carousel-control left" data-slide="prev">&lsaquo;</a>
+             <a href="#mycarousel" class="carousel-control right" data-slide="next">&rsaquo;</a>
+             <!-- 轮播导航结束 -->
+        </div>
+        <!-- 轮播结束 -->
+
+        <div class="container">
+        	<img src="imgs/banner.jpg" width=1200 alt="">
+        </div>
+
+        <div class="container-fluid video-container-fluid1">
+	<div class="container video-container">
+		<!--wow bounceInUp  data-wow-delay="0.6s"-->
+		<div class="video_1 wow bounceInUp" data-wow-delay="0.6s" >
+			<img src="imgs/01-video.png" alt=""></div>
+			<!--wow bounceInUp data-wow-delay="0.8s"-->
+		<div class="star_1 wow bounceInUp " data-wow-delay="0.8s">
+			<img src="imgs/01-star.png" alt=""></div>
+		<div class="mode mode-01">
+			<h1>精心制作的视频课程</h1>
+			<p>老师都技术大牛实战派。课程内容接地气，实际工作用得着。</p>
+		</div>
+	</div>
+</div>
+    
+    <div class="container-fluid video-container-fluid2">
+    	<div class="container video-container">
+    		<div class="mode mode-02">
+			<h1>实时交互的在线编程</h1>
+			<p>无需配置任何编程环境，直接就能在线学习编程，省时省力省心。</p>
+		</div>
+    		<div class="computer_2 wow bounceInUp" data-wow-delay="1.0s">
+    			<img src="imgs/02-computer2.png" alt=""></div>
+    	</div>
+    </div>
+
+    <div class="container-fluid video-container-fluid1">
+    	<div class="container video-container">
+    		<div class="mode mode-01">
+			<h1>循序渐进的学习计划</h1>
+			<p>专治各种学习编程迷茫症。有目标有路径，一切尽在掌握中。</p>
+		</div>
+    		<div class="calendar_3 wow bounceInUp" data-wow-delay="1.0s">
+    			<img src="imgs/03-calendar.png" alt=""></div>
+    		<div class="rocket_3 wow bounceInUp " data-wow-delay="1.2s">
+			    <img src="imgs/03-rockets.png" alt=""></div>
+			 <div class="smoke_3 wow bounceInUp " data-wow-delay="1.2s">
+			    <img src="imgs/03-smoke.png" alt=""></div>
+    	</div>
+    </div>
+
+    <div class="container-fluid video-container-fluid2">
+    	<div class="container video-container">
+    		<div class="mode mode-02">
+			<h1>互帮互助的问答社区</h1>
+			<p>有问有答有分享。老师学员同交流，高手小白共进步。</p>
+		    </div>
+    		<div class="hand_4 wow bounceInUp" data-wow-delay="1.0s">
+    			<img src="imgs/04-hand.png" alt=""></div>
+    		<div class="icon_4 wow bounceInUp" data-wow-delay="1.2s">
+    			<img src="imgs/04-icon.png" alt=""></div>
+    	</div>
+    </div>
+
+    <div class="container-fluid cl">
+    	<div class="container">
+    	<div class="col-lg-4 imgeffect">
+    		<img class="img-responsive eimg" src="imgs/v401.jpg" alt="">
+    	</div>
+    	<div class="col-lg-4 imgeffect">
+    		<img class="img-responsive eimg" src="imgs/v402.jpg" alt="">
+    	</div>
+    	<div class="col-lg-4 imgeffect">
+    		<img class="img-responsive eimg" src="imgs/v403.jpg" alt="">
+    	</div></div>
+    </div>
+
+    <div class="container-fluid cl">
+    	<div class="container">
+    	<div style="text-align:center">
+    	    <h1 style="color:#EE2C2C;font-weight:bold">课程</h1></div>
+    	<div class="course">
+    		<div class="curriculem">
+    			<img class="img-responsive" src="imgs/crcl01.jpg" alt="">
+    		</div>
+    		<div class="curriculem">
+    			<img class="img-responsive" src="imgs/crcl02.jpg" alt="">
+    		</div>
+    		<div class="curriculem">
+    			<img class="img-responsive" src="imgs/crcl03.jpg" alt="">
+    		</div>
+    		<div class="curriculem">
+    			<img class="img-responsive" src="imgs/crcl04.jpg" alt="">
+    		</div>
+    		<div class="curriculem">
+    			<img class="img-responsive" src="imgs/crcl05.jpg" alt="">
+    		</div>
+    		<div class="curriculem">
+    			<img class="img-responsive" src="imgs/crcl06.jpg" alt="">
+    		</div>
+    		<div class="curriculem">
+    			<img class="img-responsive" src="imgs/crcl07.jpg" alt="">
+    		</div>
+    		<div class="curriculem">
+    			<img class="img-responsive" src="imgs/crcl08.jpg" alt="">
+    		</div>
+    	</div>
+    	</div>   
+    </div>
+
+    <div class="container">
+    	<div class="mmk">
+    		<h2 style="font-family:monospace;color:#EE2C2C">手机慕课，随时随地学习</h2>
+    	</div>
+    	<div class="mmk">
+    		<button type="button" class="btn btn-default">手机版</button>
+            <button type="button" class="btn btn-default" style="margin-left:50px">iPad</button>
+            <div class="tdc">
+            	<a href="javascript:void(0)" class="code0">
+            	<!-- <div class="code1"></div> -->
+            	<div class="code"> </div>
+                </a>
+            </div>
+    	</div>
+    	<div class="mmk" style="margin-top:260px">
+    		<img src="imgs/mmkbg.png" alt="">
+    	</div>
+    	<div class="mmk">
+    		<button type="button" class="btn btns">开始学习</button>
+    	</div>
+    </div>
+
+    <div id="footer">
+		<div class="container">
+			<div class="left">
+				<ul>
+					<li><a href="#">网站首页</a></li>
+					<li><a href="#">人才招聘</a></li>
+					<li><a href="#">联系我们</a></li>
+					<li><a href="#">慕课云</a></li>
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">讲师招募</a></li>
+					<li><a href="#">意见反馈</a></li>
+					<li><a href="#">友情链接</a></li>
+				</ul>
+				<p>Copyright © 2015 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+			</div>
+			<div class="right">
+				<a href="#" class="weixin">
+					<div class="weixin-tip"></div>
+				</a>
+				<a href="#" class="weibo"></a>
+				<a href="#" class="qq"></a>
+			</div>
+		</div>
+	</div>
+
+	</body>
+</html>
